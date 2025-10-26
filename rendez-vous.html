@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Rendez-vous médicaux</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #5a8bb0;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #2f5f80;
+    }
+  </style>
+</head>
+<body>
+  <h1>📅 Tes rendez-vous médicaux</h1>
+  <p>Organise tes rendez-vous avec clarté et douceur 💛</p>
+</body>
+</html>
+
+<div id="bloc-rendez-vous" style="display: block; margin-top: 20px; padding: 20px; background-color: #f0f8ff; border-radius: 12px; box-shadow: 0 0 10px rgba(90, 139, 176, 0.2);">
+
+  <h3 style="color: #5a8bb0;">📅 Tableau des rendez-vous</h3>
+
+<table border="1" style="width:100%; text-align:center;">
+  <thead>
+    <tr>
+      <th>Jour</th>
+      <th>Heure</th>
+      <th>Spécialiste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lundi</td>
+      <td><input type="time" name="heure-lundi"></td>
+      <td><input type="text" name="specialiste-lundi" placeholder="Nom du spécialiste"></td>
+    </tr>
+    <tr>
+      <td>Mardi</td>
+      <td><input type="time" name="heure-mardi"></td>
+      <td><input type="text" name="specialiste-mardi"></td>
+    </tr>
+    <tr>
+      <td>Mercredi</td>
+      <td><input type="time" name="heure-mercredi"></td>
+      <td><input type="text" name="specialiste-mercredi"></td>
+    </tr>
+    <tr>
+      <td>Jeudi</td>
+      <td><input type="time" name="heure-jeudi"></td>
+      <td><input type="text" name="specialiste-jeudi"></td>
+    </tr>
+    <tr>
+      <td>Vendredi</td>
+      <td><input type="time" name="heure-vendredi"></td>
+      <td><input type="text" name="specialiste-vendredi"></td>
+    </tr>
+  </tbody>
+</table>
+
+   <!-- Bloc Notes personnelles -->
+  <div style="margin-top: 30px; padding: 20px; background-color: #fff4f8; border: 2px dashed #f8d4e4; border-radius: 12px;">
+    <h4 style="color: #d66fa3;">📝 Notes personnelles</h4>
+    <p style="color: #5a2b4f;">Tu peux noter ici ce que tu ressens, ce que tu veux demander au médecin, ou tout ce que tu veux garder en tête.</p>
+    <textarea rows="5" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;"></textarea>
+  </div>
+
+  <!-- Bloc À ne pas oublier -->
+  <div style="margin-top: 30px; padding: 20px; background-color: #fef6e4; border: 2px dashed #f2d6a3; border-radius: 12px;">
+    <h4 style="color: #c28b3d;">📌 À ne pas oublier</h4>
+    <ul style="text-align: left; color: #5a4a2f;">
+      <li>Carte Vitale</li>
+      <li>Ordonnances précédentes</li>
+      <li>Questions à poser</li>
+      <li>Résultats d’analyses</li>
+    </ul>
+  </div>
+
+</div>
+<textarea id="notes" rows="5" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;"></textarea>
+<br><br>
+<button onclick="enregistrerNotes()">💾 Enregistrer les notes</button>
