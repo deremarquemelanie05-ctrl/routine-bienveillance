@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmation - Mon espace doux</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🎉 Inscription réussie !</h1>
+    <p>Bienvenue dans ton espace doux, prêt à t’accompagner chaque jour</p>
+  </header>
+
+ <section id="bienvenue" class="section-pastel rose">
+  <h2>🌸 Bienvenue</h2>
+  <p>Un espace doux pour t’organiser et te ressourcer.</p>
+</section>
+
+<section id="planning-sante" class="section-pastel lilas">
+  <h2>🩺 Planning santé</h2>
+  <!-- contenu du planning santé ici -->
+</section>
+
+<section id="cartes" class="section-pastel peche">
+  <h2>🎨 Cartes illustrées</h2>
+  <p>Des créations poétiques à imprimer ou à offrir.</p>
+</section>
+
+<section id="bienetre" class="section-pastel menthe">
+  <h2>🧘‍♀️ Bien-être</h2>
+  <p>Respiration, rituels doux, ambiance apaisante.</p>
+</section>
+
+<section id="contact" class="section-pastel bleu">
+  <h2>📬 Contact</h2>
+  <p>Une question ? Un mot doux ? Écris-moi ici.</p>
+</section>
