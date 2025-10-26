@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Planning des médicaments</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="section-pastel vanille">
+  <h2>💊 Planning des médicaments</h2>
+
+  <table style="width:100%; border-collapse: collapse; font-size: 0.9em;">
+    <tr>
+      <th>Jour</th>
+      <th>Heure</th>
+      <th>Médicament</th>
+      <th>Dosage</th>
+      <th>Effets</th>
+      <th>Pris ?</th>
+    </tr>
+
+    <!-- Boucle sur chaque jour -->
+    <tr><td>Lundi</td>
+      <td><input type="text" id="heure_lundi" style="width:80px;"></td>
+      <td><input type="text" id="medicament_lundi" style="width:100px;"></td>
+      <td><input type="text" id="dose_lundi" style="width:60px;"></td>
+      <td><input type="text" id="effets_lundi" style="width:100px;"></td>
+      <td><input type="checkbox" id="pris_lundi"></td>
+    </tr>
+    <tr><td>Mardi</td>
+      <td><input type="text" id="heure_mardi" style="width:80px;"></td>
+      <td><input type="text" id="medicament_mardi" style="width:100px;"></td>
+      <td><input type="text" id="dose_mardi" style="width:60px;"></td>
+      <td><input type="text" id="effets_mardi" style="width:100px;"></td>
+      <td><input type="checkbox" id="pris_mardi"></td>
+    </tr>
+    <tr><td>Mercredi</td>
+      <td><input type="text" id="heure_mercredi" style="width:80px;"></td>
+      <td><input type="text" id="medicament_mercredi" style="width:100px;"></td>
+      <td><input type="text" id="dose_mercredi" style="width:60px;"></td>
+      <td><input type="text" id="effets_mercredi" style="width:100px;"></td>
+      <td><input type="checkbox" id="pris_mercredi"></td>
+    </tr>
+    <tr><td>Jeudi</td>
+      <td><input type="text" id="heure_jeudi" style="width:80px;"></td>
+      <td><input type="text" id="medicament_jeudi" style="width:100px;"></td>
+      <td><input type="text" id="dose_jeudi" style="width:60px;"></td>
+      <td><input type="text" id="effets_jeudi" style="width:100px;"></td>
+      <td><input type="checkbox" id="pris_jeudi"></td>
+    </tr>
+    <tr><td>Vendredi</td>
+      <td><input type="text" id="heure_vendredi" style="width:80px;"></td>
+      <td><input type="text" id="medicament_vendredi" style="width:100px;"></td>
+      <td><input type="text" id="dose_vendredi" style="width:60px;"></td>
+      <td><input type="text" id="effets_vendredi" style="width:100px;"></td>
+      <td><input type="checkbox" id="pris_vendredi"></td>
+    </tr>
+    <tr><td>Samedi</td>
+      <td><input type="text" id="heure_samedi" style="width:80px;"></td>
+      <td><input type="text" id="medicament_samedi" style="width:100px;"></td>
+      <td><input type="text" id="dose_samedi" style="width:60px;"></td>
+      <td><input type="text" id="effets_samedi" style="width:100px;"></td>
+      <td><input type="checkbox" id="pris_samedi"></td>
+    </tr>
+    <tr><td>Dimanche</td>
+      <td><input type="text" id="heure_dimanche" style="width:80px;"></td>
+      <td><input type="text" id="medicament_dimanche" style="width:100px;"></td>
+      <td><input type="text" id="dose_dimanche" style="width:60px;"></td>
+      <td><input type="text" id="effets_dimanche" style="width:100px;"></td>
+      <td><input type="checkbox" id="pris_dimanche"></td>
+    </tr>
+  </table>
+
+  <br>
+  <div style="text-align: center;">
+    <button class="bouton-doux" onclick="sauvegarderPlanning()">💾 Enregistrer</button>
+    <p id="confirmation" style="margin-top: 10px; color: green;"></p>
+  </div>
+</section>
+
+<script>
+  function sauvegarderPlanning() {
+    const jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+    jours.forEach(jour => {
+      localStorage.setItem("heure_" + jour, document.getElementById("heure_" + jour).value);
+      localStorage.setItem("medicament_" + jour, document.getElementById("medicament_" + jour).value);
+      localStorage.setItem("dose_" + jour, document.getElementById("dose_" + jour).value);
+      localStorage.setItem("effets_" + jour, document.getElementById("effets_" + jour).value);
+      localStorage.setItem("pris_" + jour, document.getElementById("pris_" + jour).checked);
+    });
+
+    document.getElementById("confirmation").textContent = "✅ Planning enregistré avec succès 💊";
+    setTimeout(() => {
+      document.getElementById("confirmation").textContent = "";
+    }, 3000);
+  }
+
+  window.onload = function() {
+    const jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+    jours.forEach(jour => {
+      document.getElementById("heure_" + jour).value = localStorage.getItem("heure_" + jour) || "";
+      document.getElementById("medicament_" + jour).value = localStorage.getItem("medicament_" + jour) || "";
+      document.getElementById("dose_" + jour).value = localStorage.getItem("dose_" + jour) || "";
+      document.getElementById("effets_" + jour).value = localStorage.getItem("effets_" + jour) || "";
+      document.getElementById("pris_" + jour).checked = localStorage.getItem("pris_" + jour) === "true";
+    });
+  }
+</script><script>
+  function sauvegarderPlanning() {
+    const jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+    jours.forEach(jour => {
+      localStorage.setItem("heure_" + jour, document.getElementById("heure_" + jour).value);
+      localStorage.setItem("medicament_" + jour, document.getElementById("medicament_" + jour).value);
+      localStorage.setItem("dose_" + jour, document.getElementById("dose_" + jour).value);
+      localStorage.setItem("effets_" + jour, document.getElementById("effets_" + jour).value);
+      localStorage.setItem("secondaire_" + jour, document.getElementById("secondaire_" + jour).value);
+      localStorage.setItem("pris_" + jour, document.getElementById("pris_" + jour).checked);
+    });
+    localStorage.setItem("notes", document.getElementById("notes").value);
+
+    document.getElementById("confirmation").textContent = "✅ Planning enregistré avec succès 💊";
+    setTimeout(() => {
+      document.getElementById("confirmation").textContent = "";
+    }, 3000);
+  }
+
+  window.onload = function() {
+    const jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+    jours.forEach(jour => {
+      document.getElementById("heure_" + jour).value = localStorage.getItem("heure_" + jour) || "";
+      document.getElementById("medicament_" + jour).value = localStorage.getItem("medicament_" + jour) || "";
+      document.getElementById("dose_" + jour).value = localStorage.getItem("dose_" + jour) || "";
+      document.getElementById("effets_" + jour).value = localStorage.getItem("effets_" + jour) || "";
+      document.getElementById("secondaire_" + jour).value = localStorage.getItem("secondaire_" + jour) || "";
+      document.getElementById("pris_" + jour).checked = localStorage.getItem("pris_" + jour) === "true";
+    });
+    document.getElementById("notes").value = localStorage.getItem("notes") || "";
+  }
+</script><br>
+<div style="margin: 20px 0; border: 1px solid #ccc; padding: 10px; background-color: #fff8f0;">
+  <label for="notes"><strong>📝 Notes générales :</strong></label><br>
+  <textarea id="notes" rows="4" style="width:100%;" placeholder="Observations, ressentis, questions à poser..."></textarea>
+</div>
+
+<div style="margin: 20px 0; border: 1px solid #f5cfcf; padding: 10px; background-color: #fff0f0;">
+  <label for="secondaires"><strong>⚠️ Effets secondaires observés :</strong></label><br>
+  <textarea id="secondaires" rows="4" style="width:100%;" placeholder="Fatigue, nausées, douleurs..."></textarea>
+</div>
+
+<div style="text-align: center;">
+  <button class="bouton-doux" onclick="sauvegarderPlanning()">💾 Enregistrer</button>
+  <p id="confirmation" style="margin-top: 10px; color: green;"></p>
+</div>
+

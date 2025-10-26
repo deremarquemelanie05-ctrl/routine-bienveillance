@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon espace personnel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🧺 Mon espace personnel</h1>
+    <p>Un lieu doux pour suivre ton quotidien</p>
+  </header>
+
+  <section class="section-pastel rose">
+    <h2>🌤️ Humeur du jour</h2>
+    <label for="humeur">Comment te sens-tu aujourd’hui ?</label><br>
+    <select id="humeur">
+      <option>😊 Joyeuse</option>
+      <option>😌 Apaisée</option>
+      <option>😴 Fatiguée</option>
+      <option>😢 Triste</option>
+      <option>😠 Frustrée</option>
+    </select>
+  </section>
+
+  <section class="section-pastel lilas">
+    <h2>😴 Suivi du sommeil</h2>
+    <label for="sommeil">Heures de sommeil :</label>
+    <input type="number" id="sommeil" min="0" max="24"> heures<br>
+    <label for="qualite">Qualité du sommeil :</label>
+    <select id="qualite">
+      <option>🌙 Très bon</option>
+      <option>🌘 Moyen</option>
+      <option>🌑 Mauvais</option>
+    </select>
+  </section>
+
+  <section class="section-pastel vanille">
+    <h2>📝 Notes du jour</h2>
+    <textarea rows="5" cols="50" placeholder="Écris ici tes pensées, ressentis ou observations..."></textarea>
+  </section>
+
+  <section class="section-pastel menthe">
+    <h2>✅ To-do list quotidienne</h2>
+    <ul>
+      <li><input type="checkbox"> Préparer le petit déjeuner</li>
+      <li><input type="checkbox"> Prendre les médicaments</li>
+      <li><input type="checkbox"> Appeler maman</li>
+      <li><input type="checkbox"> Repos ou activité douce</li>
+      <li><input type="checkbox"> Préparer le dîner</li>
+    </ul>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Soutien émotionnel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="section-pastel menthe">
+    <h1>💞 Soutien émotionnel</h1>
+    <p>Exprime ton humeur, ton ressenti et retrouve un peu de paix intérieure.</p>
+  </header>
+
+  <section class="section-pastel lilas">
+    <h2>🌤️ Humeur du jour</h2>
+    <select id="humeur">
+      <option value="">-- Choisir ton humeur --</option>
+      <option value="😊 Joyeuse">😊 Joyeuse</option>
+      <option value="😌 Apaisée">😌 Apaisée</option>
+      <option value="😴 Fatiguée">😴 Fatiguée</option>
+      <option value="😢 Triste">😢 Triste</option>
+      <option value="😠 Frustrée">😠 Frustrée</option>
+      <option value="🫥 Vide">🫥 Vide</option>
+    </select>
+  </section>
+
+  <section class="section-pastel vanille">
+    <h2>📝 Journal émotionnel</h2>
+    <textarea id="journal" rows="6" cols="50" placeholder="Exprime ici ce que tu ressens, ce qui t’a touchée aujourd’hui..."></textarea>
+  </section>
+
+  <section class="section-pastel rose">
+    <button class="bouton-doux" onclick="sauvegarderEmotionnel()">💾 Enregistrer</button>
+    <p id="confirmation" style="margin-top: 10px; color: green;"></p>
+  </section>
+
+  <script>
+    function sauvegarderEmotionnel() {
+      localStorage.setItem("emotion_humeur", document.getElementById("humeur").value);
+      localStorage.setItem("emotion_journal", document.getElementById("journal").value);
+
+      const confirmation = document.getElementById("confirmation");
+      confirmation.textContent = "✅ Tes émotions ont été enregistrées avec douceur 💛";
+      setTimeout(() => { confirmation.textContent = ""; }, 3000);
+    }
+
+    window.onload = function() {
+      document.getElementById("humeur").value = localStorage.getItem("emotion_humeur") || "";
+      document.getElementById("journal").value = localStorage.getItem("emotion_journal") || "";
+    }
+  </script>
+
+</body>
+</html>

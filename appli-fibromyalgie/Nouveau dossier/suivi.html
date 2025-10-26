@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Suivi santé</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="section-pastel lilas">
+    <h1>🩺 Mon suivi santé</h1>
+    <p>Note tes symptômes, traitements et ressentis pour mieux suivre ton état de santé.</p>
+  </header>
+
+  <section class="section-pastel vanille">
+    <h2>📈 Symptômes du jour</h2>
+
+    <label for="symptome">Symptôme principal :</label><br>
+    <select id="symptome">
+  <option value="">-- Choisir un symptôme --</option>
+  <option value="Fatigue">😴 Fatigue</option>
+  <option value="Douleurs">💥 Douleurs</option>
+  <option value="Migraine">🤕 Migraine</option>
+  <option value="Mal de ventre">🤢 Mal de ventre</option>
+  <option value="Nausée">🤮 Nausée</option>
+  <option value="Fièvre">🌡️ Fièvre</option>
+  <option value="Vertiges">🌀 Vertiges</option>
+  <option value="Autre">📝 Autre</option>
+</select>
+
+
+
+    <label for="intensite">Intensité (1 à 10) :</label><br>
+    <input type="range" id="intensite" min="1" max="10"><br><br>
+
+    <label for="commentaire">Commentaire :</label><br>
+    <textarea id="commentaire" rows="4" placeholder="Décris ton ressenti, les déclencheurs, etc."></textarea><br><br>
+
+    <button class="bouton-doux" onclick="sauvegarderSuivi()">💾 Enregistrer</button>
+    <p id="confirmation" style="margin-top: 10px; color: green;"></p>
+  </section>
+
+  <script>
+    function sauvegarderSuivi() {
+      localStorage.setItem("suivi_symptome", document.getElementById("symptome").value);
+      localStorage.setItem("suivi_intensite", document.getElementById("intensite").value);
+      localStorage.setItem("suivi_commentaire", document.getElementById("commentaire").value);
+
+      const confirmation = document.getElementById("confirmation");
+      confirmation.textContent = "✅ Données enregistrées avec succès !";
+      setTimeout(() => { confirmation.textContent = ""; }, 3000);
+    }
+
+    window.onload = function() {
+      document.getElementById("symptome").value = localStorage.getItem("suivi_symptome") || "";
+      document.getElementById("intensite").value = localStorage.getItem("suivi_intensite") || 5;
+      document.getElementById("commentaire").value = localStorage.getItem("suivi_commentaire") || "";
+    }
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Organisation pratique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🧾 Mon organisation pratique</h1>
+    <p>Un espace pour t’aider à préparer tes rendez-vous et ton quotidien</p>
+  </header>
+
+  <section class="section-pastel vanille">
+    <h2>📅 Fiches de rendez-vous</h2>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Médecin / Spécialité</th>
+        <th>Lieu</th>
+        <th>Préparation</th>
+      </tr>
+      <tr>
+        <td><input type="date"></td>
+        <td><input type="text" placeholder="Ex : cardiologue"></td>
+        <td><input type="text" placeholder="Adresse ou hôpital"></td>
+        <td><input type="text" placeholder="Ex : apporter ECG, carte vitale"></td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section-pastel lilas">
+    <h2>🧺 À ne pas oublier</h2>
+    <ul class="checklist">
+      <li><input type="checkbox"> Carte vitale</li>
+      <li><input type="checkbox"> Ordonnances</li>
+      <li><input type="checkbox"> Résultats d’examens</li>
+      <li><input type="checkbox"> Questions à poser</li>
+      <li><input type="checkbox"> Un petit goûter ou bouteille d’eau</li>
+    </ul>
+  </section>
+
+  <section class="section-pastel rose">
+    <h2>📝 Notes personnelles</h2>
+    <textarea rows="5" cols="50" placeholder="Ajoute ici tes remarques, ressentis ou rappels personnels..."></textarea>
+  </section>
+
+</body>
+</html>
+<div style="text-align: center;">
+  <button class="bouton-doux" onclick="enregistrerDonnees()">💾 Enregistrer les données</button>
+  <p id="confirmation" style="margin-top: 10px; color: green;"></p>
+</div>
